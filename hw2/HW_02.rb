@@ -74,7 +74,7 @@ full_name = first_name + " " + last_name
 puts "This game was created by #{full_name}!"
 
 puts "What is your name player?"
-player_name= gets.chomp
+player_name= $sdtin.gets.chomp
 secret_number = 1 + rand(10)
 guesses_left = 3
 
@@ -84,17 +84,17 @@ puts "You have 3 guesses."
 
 while guesses_left != 0 do
 puts "Please pick a number between 1 and 10..."
-guess = gets.chomp.to_i
+guess = $stdin.gets.chomp.to_i
 	if guess == secret_number
 		puts "You guessed correctly!"
 		break
 	elsif guess > secret_number
-		puts "your guess is higher than the Secret Number."
-		guesses_left = guesses_left - 1
+		puts "Your guess is higher than the Secret Number."
+		guesses_left -= 1
 		puts "You have #{guesses_left.to_s} guesses remaining."
 	elsif guess < secret_number
 		puts "Your guess is less than the Secret Number"
-		guesses_left = guesses_left - 1
+		guesses_left -= 1
 		puts "You have #{guesses_left.to_s} guesses remaining."
 	end
 end
@@ -104,6 +104,3 @@ if guesses_left == 0
 else
 	puts "Congratulations #{player_name}. You are a winner!"
 end
-
-
-
