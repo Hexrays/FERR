@@ -39,9 +39,9 @@ puts "You have 3 guesses."
 
 
 while attempts < 3 do
-puts "Please pick a number between 1 and 10..."
-guess = $stdin.gets.chomp.to_i
-attempts = increment_guess_count(attempts)
+	puts "Please pick a number between 1 and 10..."
+	guess = $stdin.gets.chomp.to_i
+	attempts = increment_guess_count(attempts)
 	if guess == secret_number
 		puts messages[:win]
 		break
