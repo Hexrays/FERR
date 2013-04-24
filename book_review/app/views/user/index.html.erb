@@ -1,0 +1,17 @@
+<h1>Display Names Ages and Emails</h1>
+<% @user.each do |user| %>
+	<div class="users">
+		<p><strong><%= user.first_name %> <%= user.last_name %>:</strong> age: <%= user.age %>, email: <%= user.email %></p>
+
+	</div>
+<% end %>
+
+<h1>Teens</h1>
+<% @user.each do |user| %>
+	<div class="teens">
+	<% if user.is_teen? %>
+		<p><strong><%= user.first_name %> <%= user.last_name %></strong></p>
+	<% end %>
+	</div>
+<% end %>
+

@@ -1,0 +1,10 @@
+<ul>
+	<% Users.all.each do |u| %>
+		<li><%= u.first_name %></li>
+			<ul>
+				<% u.reviews.each do |reviews| %>
+					<li><%= review.content %></li>
+				<% end %>
+			</ul>
+	<% end %>
+</ul>

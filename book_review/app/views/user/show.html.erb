@@ -1,0 +1,10 @@
+<% @user.each do |user| %>
+	<ul>
+		<li><strong><%= user.fname %></strong></li>
+			<ul>
+			<% user.reviews.each do |r| %>
+				<li><%= r.content %></li>
+			<% end %>				
+			</ul>
+	</ul>
+<% end %>
